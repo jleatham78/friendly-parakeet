@@ -21,49 +21,38 @@
 
 
 
-// Write password to the #password input
+// Define characters
 var getCharacters = function() {
   
       passlength = prompt("How long do you want your password to be?");
       passlength = parseInt(passlength);
       if(passlength < 8 || passlength > 128) {
       alert("Please select a number greater than 8 and less than 128.");
-      //passlength = prompt("How long do you want your password to be?");
       return getCharacters ();
       }
-      
-    //var guaranteed = []
 
     
     lowerchar = confirm("Do you want to use lowercase letters in your password?");
     if(lowerchar) {
       possibilities = possibilities.concat(lowercaseArr);
-     //guaranteed.push(lowercaseArr[Math.floor(Math.random() * numberArr.length)]);
     }
 
     numbers = confirm("Do you want to use numbers in your password?");
     if(numbers) {
       possibilities = possibilities.concat(numberArr);
-      //guaranteed.push(numberArr[Math.floor(Math.random() * numberArr.length)]);
     }
 
     upperchar = confirm("Do you want to use upper case letters in your password?");
     if(upperchar) {
       possibilities = possibilities.concat(uppercaseArr);
-     
-    //guaranteed.push(uppercaseArr[Math.floor(Math.random() * uppercaseArr.length)]);
     }
 
     specchar = confirm("Do you want to use special characters in your password?");
     if(specchar) {
       possibilities = possibilities.concat(specialcharArr);
-      
-    //guaranteed.push(specialcharArr[Math.floor(Math.random() * specialcharArr.length)]);
     }
 
-    console.log(possibilities);
 
-    //console.log(guaranteed);
 }
   
 var generatePassword = function () {
@@ -78,9 +67,6 @@ var generatePassword = function () {
     password = password.join('');
     return password;
 }
-
-    
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
